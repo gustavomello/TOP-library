@@ -1,0 +1,114 @@
+@font-face {
+    font-family: 'robotobold';
+    src: url('fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*{
+    padding:0;
+    margin:0;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: robotoregular;
+  }
+.container{
+    display:flex;
+    flex-direction: column;
+}
+.main-content{
+    flex-grow: 1;
+    background-color: #e2e8f0;
+    display:grid;
+    gap:25px;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    padding: 2.5em;
+}
+.books{
+    display:grid;
+    gap:25px;
+    grid-template-columns:  repeat(auto-fit, 15em);
+    grid-template-rows: 15em;
+    grid-auto-rows: 15em;
+
+}
+@media only screen and (max-width: 600px) {
+    .books {
+        grid-template-columns:  80vw;
+        grid-template-rows: 80vw;
+        grid-auto-rows: 80vw;
+    }
+  }
+
+.book-read{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display:grid;
+    grid-template-rows: max-content 1fr max-content;
+    background:repeating-linear-gradient(
+        90deg,
+        black,
+        black 10px,
+        white 10px,
+        white 2000px
+        );
+
+}
+.book-unread{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display:grid;
+    grid-template-rows: max-content 1fr max-content;
+    background:repeating-linear-gradient(
+        90deg,
+        red,
+        red 10px,
+        white 10px,
+        white 2000px
+        );
+
+}
+
+.book-icons{
+    display:grid;
+    grid-template-columns: repeat(3, 24px);
+    justify-content: end;
+    gap: 15px;
+}
+.header{
+    display:grid;
+    grid-template-columns: 3em 1fr;
+    padding: 2.5em;
+    align-items: center;
+}
+.footer{
+    padding: 2.5em;
+    display:grid;
+    align-items: center;
+}
+
+button{
+    font-family: robotoregular;
+    font-weight: bolder;
+    font-size: 1em;
+    background-color: #1992d4;
+    border-radius: 2em;
+    border: none;
+    padding:.7em 2em;
+    color:white;
+}
