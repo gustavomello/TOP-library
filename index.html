@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="container">
@@ -19,7 +19,7 @@
                 <h2>Your Books</h2>
             </div>
             <div class="books">
-                <div class="book-read">
+                <!-- <div class="book book-read">
                     <h3>Hitchhiker's guide to the galaxy</h3>
                     <p>By Douglas Adams</p>
                     <p>200 pages</p>
@@ -29,7 +29,7 @@
                         <img src = "images/book-minus-outline.svg" alt="Delete"/>
                     </div>
                 </div>
-                <div class="book-unread">
+                <div class="book book-unread">
                     <h3>Percy Jackson</h3>
                     <p>By Rick Riordan</p>
                     <p>1 page</p>
@@ -38,17 +38,36 @@
                         <img src = "images/book-cancel-outline.svg" alt="Mark as unread"/>
                         <img src = "images/book-minus-outline.svg" alt="Delete"/>
                     </div>
+                </div>           -->
+                <div class="add">
+                    <div class="form">
+
+                        <label for="Title" class="placeholder">Title</label></br>
+                        <input id="Title" class="input" type="text" placeholder="Bible"/></br>
+
+                        <label for="Author" class="placeholder">Author</label></br>
+                        <input id="Author" class="input" type="text" placeholder="Jesus"/></br>
+
+                        <label for="pages" class="placeholder">Number of pages</label></br>
+                        <input id="Pages" name="pages" class="input" type="number" placeholder="500" /></br>
+
+                        <input type="checkbox" id="Status" name="status" >
+                        <label for="status">I've read it</label>
+
+                        <button type="text" class="submit" id="add">+ Add Book</button>
+                      </div>
+                     <!-- <button type="button" id="addbook" href="#addbookoverlay">
+                        <h2>+ Add Book</h2>
+                     </button> -->
                 </div>
                 
-                <div class="add">
-                     <h2>+ Add Book</h2>
-                </div>
                 
             </div>
         </div>
         <div class="footer">
             <p>Made by <a href="https://github.com/gustavomello/">Gustavo Mello</a></p>
         </div>
+
     </div>
 </body>
 </html>

@@ -106,14 +106,27 @@ button{
     font-family: robotoregular;
     font-weight: bolder;
     font-size: 1em;
-    background-color: #1992d4;
-    border-radius: 2em;
+    background-color: black;
+    border-radius: 0 2em 2em 0;
     border: none;
-    padding:.7em 2em;
+    padding:.4em 2em;
     color:white;
+    text-decoration: none;
 }
+button:active{
+    color:transparent;
+}
+
 .add{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    display:grid;
+    grid-template-rows: max-content max-content 1fr max-content;
+    background:white;
+
+}
+
+input[type="text"]{
+    width: 100%;
 }
