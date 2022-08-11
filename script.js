@@ -50,7 +50,7 @@ function buildLibraryCards() {
 function buildBookCard(title, author, pages, read, index){
     const books = document.querySelector('.books');
     let nBook = document.createElement("div");
-    nBook.setAttribute('data',e);
+    nBook.setAttribute('data',index);
     let nTitle = document.createElement("h3");
     nTitle.textContent = title;
     let nAuthor = document.createElement("p");
@@ -62,12 +62,25 @@ function buildBookCard(title, author, pages, read, index){
     };
     let iconsdiv = document.createElement("div");
     iconsdiv.classList.add("book-icons")
+
     let icon1 = document.createElement("img");
     icon1.src="images/book-check-outline.svg";
+    icon1.addEventListener('click', event => {
+        markAsRead(nBook.getAttribute('data'))
+    });
+
     let icon2 = document.createElement("img");
     icon2.src="images/book-cancel-outline.svg";
+    icon2.addEventListener('click', event => {
+        markAsUnread(nBook.getAttribute('data'))
+    });
+
     let icon3 = document.createElement("img");
     icon3.src="images/book-minus-outline.svg";
+    icon3.addEventListener('click', event => {
+        delBook(nBook.getAttribute('data'))
+    });
+
     iconsdiv.appendChild(icon1);
     iconsdiv.appendChild(icon2);
     iconsdiv.appendChild(icon3);
@@ -79,7 +92,24 @@ function buildBookCard(title, author, pages, read, index){
     nBook.appendChild(nPages);
     nBook.appendChild(iconsdiv);
     books.insertBefore(nBook, books.firstChild);
+};
+
+
+
+function markAsRead(index){
+    myLibrary[index].read = true;
+    deleteAllCards();
+    buildLibraryCards();
 }
 
-// const theHobbit = new Book('The Hobbit','J.R.R. Tolkien','295', 'not read yet')
-// console.log(theHobbit.info())
+function markAsUnread(index){
+    myLibrary[index].read = false;
+    deleteAllCards();
+    buildLibraryCards();
+}
+
+function delBook(index){
+    myLibrary.splice(index, 1);
+    deleteAllCards();
+    buildLibraryCards();
+}
